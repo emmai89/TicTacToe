@@ -60,13 +60,13 @@ public class Board {
         int[] counts;
         boolean win;
 
-        win = diagnals(pieces);
+        win = diagonals(pieces);
 
-        counts = strights(pieces, 0);
+        counts = straights(pieces, 0);
         if (counts[0] == 3 || counts[1] == 3 || counts[2] == 3)
             win = true;
 
-        counts = strights(pieces, 1);
+        counts = straights(pieces, 1);
         if (counts[0] == 3 || counts[1] == 3 || counts[2] == 3)
             win = true;
         
@@ -74,7 +74,7 @@ public class Board {
         return win;
     }
 
-    private int[] strights(LinkedList<Piece> pieces, int position){
+    private int[] straights(LinkedList<Piece> pieces, int position){
         int[] counts = new int[3];
         Arrays.fill(counts, 0);
         for (Piece piece : pieces) {
@@ -89,7 +89,7 @@ public class Board {
         return counts;
     }
 
-    private boolean diagnals(LinkedList<Piece> pieces){
+    private boolean diagonals(LinkedList<Piece> pieces){
         boolean win = false;
         int count = 0;
         int count_2 = 0;
