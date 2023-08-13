@@ -1,12 +1,17 @@
 package com.manny.tictactoe;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
 import java.util.Arrays;
 import java.util.LinkedList;
 
 /**
  *  This handles all the function=s the board needs
  */
-public class Board {
+public class Board implements Parcelable {
 
     private LinkedList<Piece> x_pieces;
     private LinkedList<Piece> o_pieces;
@@ -14,29 +19,54 @@ public class Board {
 
     public Board() {
         turn = true;
+        x_pieces = new LinkedList<Piece>();
+        o_pieces = new LinkedList<Piece>();
     }
 
+    protected Board(Parcel in) {
+        turn = in.readByte() != 0;
+    }
+
+    public static final Creator<Board> CREATOR = new Creator<Board>() {
+        @Override
+        public Board createFromParcel(Parcel in) {
+            return new Board(in);
+        }
+
+        @Override
+        public Board[] newArray(int size) {
+            return new Board[size];
+        }
+    };
+
     public boolean addPiece(int[] position){
-        if (turn)
+        if (turn) {
             x_pieces.add(new Piece(turn, position));
+            System.out.println("cunt");
+        }
         else
             o_pieces.add(new Piece(turn, position));
 
         turn = !turn;
 
+        System.out.println("clicky" + position[0] +position[1]);
         return checkWin();
     }
 
-    public boolean checkOccupied(int[] position) {
+    public Piece checkOccupied(int[] position) {
         for (Piece piece : x_pieces) {
             if(Arrays.equals(piece.getPosition(), position))
-                return true;
+                return x_pieces.getFirst();
         }
         for (Piece piece : o_pieces) {
             if(Arrays.equals(piece.getPosition(), position))
-                return true;
+                return o_pieces.getFirst();
         }
-        return false;
+        return null;
+    }
+
+    public boolean getTurn(){
+        return turn;
     }
 
     public boolean checkWin(){
@@ -114,4 +144,13 @@ public class Board {
 
     }
 
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel parcel, int i) {
+        parcel.writeByte((byte) (turn ? 1 : 0));
+    }
 }

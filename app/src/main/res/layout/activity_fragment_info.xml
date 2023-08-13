@@ -7,8 +7,8 @@
     android:layout_height="match_parent"
     tools:context=".InfoFragment">
 
-    <Button
-        android:id="@+id/oneColumn"
+    <TextView
+        android:id="@+id/turn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Button"
@@ -16,51 +16,9 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/twoColumn"
-
-        tools:layout_editor_absoluteX="49dp"
-        tools:layout_editor_absoluteY="327dp" />
-
-    <Button
-        android:id="@+id/twoColumn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/oneColumn"
-        app:layout_constraintRight_toLeftOf="@id/threeColumn"
-
-        tools:layout_editor_absoluteX="164dp"
-        tools:layout_editor_absoluteY="321dp" />
-
-    <Button
-        android:id="@+id/threeColumn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/twoColumn"
-        app:layout_constraintRight_toLeftOf="@id/orientation"
-
-        tools:layout_editor_absoluteX="252dp"
-        tools:layout_editor_absoluteY="329dp" />
-
-    <Button
-        android:id="@+id/orientation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toRightOf="@id/threeColumn"
         app:layout_constraintRight_toRightOf="parent"
 
-        tools:layout_editor_absoluteX="334dp"
-        tools:layout_editor_absoluteY="327dp" />
+        />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

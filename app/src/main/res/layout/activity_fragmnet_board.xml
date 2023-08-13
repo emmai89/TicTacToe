@@ -20,58 +20,27 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/text_00"
+                android:id="@+id/text_0_0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_shape_rec"
-                android:text="Button"
-                style="?android:attr/buttonBarButtonStyle" />
-
-
-            <Button
-                android:id="@+id/text_01"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn_shape_rec"
-                android:text="Button"
+                android:text="X"
                 style="?android:attr/buttonBarButtonStyle" />
 
             <Button
-                android:id="@+id/text_02"
+                android:id="@+id/text_0_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_shape_rec"
-                android:text="Button"
-                style="?android:attr/buttonBarButtonStyle" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <Button
-                android:id="@+id/text_10"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn_shape_rec"
-                android:text="Button"
+                android:text="X"
                 style="?android:attr/buttonBarButtonStyle" />
 
             <Button
-                android:id="@+id/text_11"
+                android:id="@+id/text_0_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_shape_rec"
-                android:text="Button"
-                style="?android:attr/buttonBarButtonStyle" />
-
-            <Button
-                android:id="@+id/text12"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/btn_shape_rec"
-                android:text="Button"
+                android:text="X"
                 style="?android:attr/buttonBarButtonStyle" />
 
         </TableRow>
@@ -81,27 +50,57 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/Button_20"
+                android:id="@+id/text_1_0"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_shape_rec"
-                android:text="Button"
+                android:text="Y"
                 style="?android:attr/buttonBarButtonStyle" />
 
             <Button
-                android:id="@+id/Button_21"
+                android:id="@+id/text_1_1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_shape_rec"
-                android:text="Button"
+                android:text="X"
                 style="?android:attr/buttonBarButtonStyle" />
 
             <Button
-                android:id="@+id/text_22"
+                android:id="@+id/text_1_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn_shape_rec"
-                android:text="Button"
+                android:text="Y"
+                style="?android:attr/buttonBarButtonStyle" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/text_2_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_shape_rec"
+                android:text="X"
+                style="?android:attr/buttonBarButtonStyle" />
+
+            <Button
+                android:id="@+id/text_2_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_shape_rec"
+                android:text="Y"
+                style="?android:attr/buttonBarButtonStyle" />
+
+            <Button
+                android:id="@+id/text_2_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn_shape_rec"
+                android:text="X"
                 style="?android:attr/buttonBarButtonStyle" />
         </TableRow>
 

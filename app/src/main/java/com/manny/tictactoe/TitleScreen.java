@@ -41,21 +41,13 @@ public class TitleScreen extends AppCompatActivity {
         goal = rand.nextInt(2000) + 1; //random goal between 1 and 2000 points
         seed = rand.nextInt(goal); // the amount of points the user starts with, will be below the goal by at least 1
 
-        //Country.CountryList countryList = new Country.CountryList(Country.generateCountries(), goal, seed); // list of countries and questions initialised
-
         seed_text = findViewById(R.id.seed);
         goal_text = findViewById(R.id.target);
 
-        //seed_text.setText("Seed: " + countryList.getCurrentPoints());
-       // goal_text.setText("Goal: " + countryList.getPointsGoal());
 
-       /* start.setOnClickListener(v -> {
-            Intent intent = new Intent(FirstScreen.this, SecondScreen.class); // when the start button is clicked the second activity is started with the generated information
-            Bundle bundle = new Bundle();
-            bundle.putParcelable("CountryList", countryList);
-            intent.putExtra("Bundle", bundle);
-
+        start.setOnClickListener(v -> {
+            Intent intent = new Intent(TitleScreen.this, GameScreen.class);
             startActivity(intent);
-        });*/
+        });
     }
 }
