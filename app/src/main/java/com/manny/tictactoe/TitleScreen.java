@@ -41,9 +41,6 @@ public class TitleScreen extends AppCompatActivity {
         goal = rand.nextInt(2000) + 1; //random goal between 1 and 2000 points
         seed = rand.nextInt(goal); // the amount of points the user starts with, will be below the goal by at least 1
 
-        seed_text = findViewById(R.id.seed);
-        goal_text = findViewById(R.id.target);
-
 
         start.setOnClickListener(v -> {
             Intent intent = new Intent(TitleScreen.this, GameScreen.class);

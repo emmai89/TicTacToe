@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import java.util.LinkedList;
 
@@ -37,17 +38,18 @@ public class BoardFragment extends Fragment {
 
         for (Button button: buttons) {
             button.setOnClickListener(v -> {
-                System.out.println("oi ");
                 int[] temp = getPosition(button);
                 Piece piece = board.checkOccupied(temp);
-                System.out.println(temp[0] +"," +temp[1]);
-                board.addPiece(temp);
-                if (piece != null) {
-                    if (piece.getShape())
-                        button.setText("X");
-                    else
-                        button.setText("Y");
 
+                if (!board.checkWin()) {
+                    if (board.checkOccupied(temp) == null) {
+                        board.addPiece(temp);
+                        updateInfo();
+                        if (!board.getTurn())
+                            button.setText("X");
+                        else
+                            button.setText("O");
+                    }
                 }
             });
         }
@@ -61,4 +63,15 @@ public class BoardFragment extends Fragment {
         return pos;
     }
 
+    private void updateInfo()
+    {
+        FragmentManager fm = getFragmentManager();
+        InfoFragment infoFragment = new InfoFragment();
+
+        Bundle bundle = new Bundle();
+        bundle.putParcelable("board", board);
+        infoFragment.setArguments(bundle);
+
+        fm.beginTransaction().replace(R.id.infoFragment, infoFragment).commit();
+    }
 }

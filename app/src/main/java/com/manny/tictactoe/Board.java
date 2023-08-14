@@ -42,7 +42,6 @@ public class Board implements Parcelable {
     public boolean addPiece(int[] position){
         if (turn) {
             x_pieces.add(new Piece(turn, position));
-            System.out.println("cunt");
         }
         else
             o_pieces.add(new Piece(turn, position));
@@ -73,7 +72,7 @@ public class Board implements Parcelable {
         LinkedList<Piece> pieces;
         boolean win;
 
-        if (turn)
+        if (!turn)
             pieces = x_pieces;
         else
             pieces = o_pieces;

@@ -19,15 +19,18 @@ public class InfoFragment extends Fragment {
 
         TextView turn = view.findViewById(R.id.turn);
 
-        if (board.getTurn())
-            turn.setText("X's Turn");
-        else
-            turn.setText("Y's Turn");
-
+        if (board.checkWin()) {
+            if (board.getTurn())
+                turn.setText("O wins");
+            else
+                turn.setText("X wins");
+        }
+        else{
+            if (board.getTurn())
+                turn.setText("X's Turn");
+            else
+                turn.setText("O's Turn");
+        }
         return view;
-    }
-
-    private void displayTurn() {
-
     }
 }
