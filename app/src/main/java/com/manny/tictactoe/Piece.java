@@ -2,8 +2,8 @@ package com.manny.tictactoe;
 
 public class Piece {
 
-    private boolean shape;
-    private int[] position;
+    private final boolean shape;
+    private final int[] position;
 
     public Piece(boolean shape, int[] position){
         this.shape = shape;

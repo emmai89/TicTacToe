@@ -9,8 +9,6 @@ import android.widget.Button;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
-import java.util.LinkedList;
-
 public class BoardFragment extends Fragment {
     private Board board;
     @Override
@@ -18,6 +16,7 @@ public class BoardFragment extends Fragment {
     {
         View view = inflater.inflate(R.layout.activity_fragmnet_board, ui, false);
 
+        assert getArguments() != null;
         board = getArguments().getParcelable("board");
         Button[] buttons = {view.findViewById(R.id.text_0_0), view.findViewById(R.id.text_0_1), view.findViewById(R.id.text_0_2),
                             view.findViewById(R.id.text_1_0), view.findViewById(R.id.text_1_1), view.findViewById(R.id.text_1_2),
@@ -33,13 +32,12 @@ public class BoardFragment extends Fragment {
                     button.setText("Y");
             }
             else
-                button.setText("Click");
+                button.setText("-");
         }
 
         for (Button button: buttons) {
             button.setOnClickListener(v -> {
                 int[] temp = getPosition(button);
-                Piece piece = board.checkOccupied(temp);
 
                 if (!board.checkWin()) {
                     if (board.checkOccupied(temp) == null) {
@@ -59,8 +57,7 @@ public class BoardFragment extends Fragment {
     private int[] getPosition(Button button){
         String id = button.getResources().getResourceEntryName((button.getId()));
         String[] temp = id.split("_");
-        int[] pos = {Integer.valueOf(temp[1]), Integer.valueOf(temp[2])};
-        return pos;
+        return new int[]{Integer.parseInt(temp[1]), Integer.parseInt(temp[2])};
     }
 
     private void updateInfo()
@@ -72,6 +69,7 @@ public class BoardFragment extends Fragment {
         bundle.putParcelable("board", board);
         infoFragment.setArguments(bundle);
 
+        assert fm != null;
         fm.beginTransaction().replace(R.id.infoFragment, infoFragment).commit();
     }
 }

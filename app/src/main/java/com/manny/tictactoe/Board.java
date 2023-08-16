@@ -19,8 +19,8 @@ public class Board implements Parcelable {
 
     public Board() {
         turn = true;
-        x_pieces = new LinkedList<Piece>();
-        o_pieces = new LinkedList<Piece>();
+        x_pieces = new LinkedList<>();
+        o_pieces = new LinkedList<>();
     }
 
     protected Board(Parcel in) {
@@ -39,17 +39,14 @@ public class Board implements Parcelable {
         }
     };
 
-    public boolean addPiece(int[] position){
+    public void addPiece(int[] position){
         if (turn) {
-            x_pieces.add(new Piece(turn, position));
+            x_pieces.add(new Piece(true, position));
         }
         else
-            o_pieces.add(new Piece(turn, position));
+            o_pieces.add(new Piece(false, position));
 
         turn = !turn;
-
-        System.out.println("clicky" + position[0] +position[1]);
-        return checkWin();
     }
 
     public Piece checkOccupied(int[] position) {
@@ -122,17 +119,17 @@ public class Board implements Parcelable {
         boolean win = false;
         int count = 0;
         int count_2 = 0;
-        int[][] diag = {{2,0},{1,1},{0,2}};
+        int[][] diagonal = {{2,0},{1,1},{0,2}};
 
         for (Piece piece : pieces) {
             if (piece.getPosition()[0] == piece.getPosition()[1])
                 count++;
 
-            if (Arrays.equals(piece.getPosition(), diag[0]))
+            if (Arrays.equals(piece.getPosition(), diagonal[0]))
                 count_2++;
-            if (Arrays.equals(piece.getPosition(), diag[1]))
+            if (Arrays.equals(piece.getPosition(), diagonal[1]))
                 count_2++;
-            if (Arrays.equals(piece.getPosition(), diag[2]))
+            if (Arrays.equals(piece.getPosition(), diagonal[2]))
                 count_2++;
         }
 
