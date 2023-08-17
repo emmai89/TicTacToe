@@ -62,7 +62,7 @@ public class BoardFragment extends Fragment {
 
     private void updateInfo()
     {
-        FragmentManager fm = getChildFragmentManager();
+        FragmentManager fm = getParentFragmentManager();
         InfoFragment infoFragment = new InfoFragment();
 
         Bundle bundle = new Bundle();
