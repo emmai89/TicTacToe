@@ -16,11 +16,12 @@ public class Board implements Parcelable {
     private LinkedList<Piece> x_pieces;
     private LinkedList<Piece> o_pieces;
     private boolean turn; // true is X, false is O
-
-    public Board() {
+    private Settings settings;
+    public Board(Settings settings) {
         turn = true;
         x_pieces = new LinkedList<>();
         o_pieces = new LinkedList<>();
+        this.settings = settings;
     }
 
     protected Board(Parcel in) {
@@ -63,6 +64,10 @@ public class Board implements Parcelable {
 
     public boolean getTurn(){
         return turn;
+    }
+
+    public Settings getSettings() {
+        return settings;
     }
 
     public boolean checkWin(){

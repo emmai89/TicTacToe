@@ -27,10 +27,35 @@
         android:layout_height="wrap_content"
         android:text="Start"
 
+        app:layout_constraintBottom_toTopOf="@id/optionsText"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/optionsButton"
+        app:layout_constraintTop_toBottomOf="@id/title"
+
+        />
+
+    <Button
+        android:id="@+id/optionsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Options"
+
+        app:layout_constraintBottom_toTopOf="@id/optionsText"
+        app:layout_constraintLeft_toRightOf="@id/startButton"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+
+        />
+
+    <TextView
+        android:id="@+id/optionsText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/startButton"
 
         />
 

@@ -13,6 +13,7 @@
         <activity android:name=".BoardFragment" />
         <activity android:name=".GameScreen" />
         <activity android:name=".InfoFragment" />
+        <activity android:name=".SettingsScreen" />
         <activity android:name=".Piece" />
         <activity android:name=".TitleScreen"
             android:exported="true">

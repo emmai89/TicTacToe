@@ -5,6 +5,8 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
+import java.util.Objects;
+
 public class GameScreen extends AppCompatActivity {
 
     @Override
@@ -12,8 +14,9 @@ public class GameScreen extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game_screen);
+        Settings settings = Objects.requireNonNull(getIntent().getBundleExtra("bundle")).getParcelable("settings");
+        Board board = new Board(settings);
 
-        Board board = new Board();
 
         FragmentManager fm = getSupportFragmentManager();
         InfoFragment infoFragment = (InfoFragment) fm.findFragmentById(R.id.infoFragment);

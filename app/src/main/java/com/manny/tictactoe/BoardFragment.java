@@ -32,7 +32,7 @@ public class BoardFragment extends Fragment {
                     button.setText("Y");
             }
             else
-                button.setText("-");
+                button.setText("");
         }
 
         for (Button button: buttons) {
@@ -62,14 +62,13 @@ public class BoardFragment extends Fragment {
 
     private void updateInfo()
     {
-        FragmentManager fm = getFragmentManager();
+        FragmentManager fm = getChildFragmentManager();
         InfoFragment infoFragment = new InfoFragment();
 
         Bundle bundle = new Bundle();
         bundle.putParcelable("board", board);
         infoFragment.setArguments(bundle);
 
-        assert fm != null;
         fm.beginTransaction().replace(R.id.infoFragment, infoFragment).commit();
     }
 }

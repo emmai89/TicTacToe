@@ -1,5 +1,6 @@
 package com.manny.tictactoe;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import androidx.fragment.app.Fragment;
 
 public class InfoFragment extends Fragment {
 
+    @SuppressLint("SetTextI18n")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup ui, Bundle bundle){
         View view = inflater.inflate(R.layout.activity_fragment_info, ui, false);
@@ -19,6 +21,7 @@ public class InfoFragment extends Fragment {
 
         TextView turn = view.findViewById(R.id.turn);
 
+        assert board != null;
         if (board.checkWin()) {
             if (board.getTurn())
                 turn.setText("O wins");
